@@ -1,0 +1,14 @@
+i=1;
+artist=$1;
+album=$2;
+url=$3;
+yt-dlp -f --add-metadata -f best/bestaudio -o "%(playlist_index)s-%(title)s.%(ext)s" $url;
+for file in ./*
+do
+	ffmpeg -i "$file" "$file.opus";
+	rm "$file";
+	echo "TRACKNUMBER=$i
+ARTIST=$artist
+ALBUM=$album" | opustags -i -S "$file.opus";
+	i=$((i + 1));
+done
