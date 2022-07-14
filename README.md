@@ -4,7 +4,7 @@ A very short bash shell script for pulling, converting and tagging music playlis
 ## Dependencies
 bash ffmpeg opustags yt-dlp
 ## Installation
-Just make the script executable and put it in yout $PATH
+Just make the script executable and put it in your $PATH
 ## Usage
 yta [artist] [album] [url]
 
